@@ -1,0 +1,15 @@
+@if (islogged) {
+    <p>Bienvenido amo {{username}} </p>
+    <img (click)="alerta()"  src="https://github.com/midudev.png" alt="photos">
+}@else {
+    <p>Inicia sesión</p>
+    <button (click)="islogged = true" >goo</button>
+}
+<app-gamer 
+    (addFavoriteEvent)="getFavorite($event)"
+    username="{{username}}">
+</app-gamer>
+
+@if (favgame !== '') {
+    <h3>Tu juego favorito es {{favgame}} </h3>
+}
